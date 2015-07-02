@@ -1,18 +1,26 @@
 package bukkitrunnablehelper.handlers;
 
 import bukkitrunnablehelper.interfaces.ConditionalRepeatable;
+import bukkitrunnablehelper.interfaces.Plannable;
 
 /**
- * Created by Pieter on 2/07/2015.
+ * A ConditionalRepeatHandler extends a {@link RepeatableHandler} and handles the scheduling of a {@link ConditionalRepeatable} class.
+ * Until {@link ConditionalRepeatable#getCondition()} is false, the {@link ConditionalRepeatable#repeat()} method is called. If the condition
+ * is false, this task will be canceled ({@link #cancel()}) and the method {@link ConditionalRepeatable#timeout()} is called.
  */
-public class ConditionalRepeatHandler extends RunnableHandler {
+public class ConditionalRepeatHandler extends RepeatableHandler {
     private ConditionalRepeatable conditionalRepeatable;
-    public ConditionalRepeatHandler(ConditionalRepeatable timeOutable) {
+    ConditionalRepeatHandler(ConditionalRepeatable timeOutable) {
         super(timeOutable);
         conditionalRepeatable = timeOutable;
         runTaskTimer(plugin, 0, conditionalRepeatable.getDelayTicks());
     }
 
+    /**
+     * This method is called every "{@link ConditionalRepeatable#getDelayTicks()}" ticks. If {@link ConditionalRepeatable#getCondition()} is true
+     * this method will call {@link ConditionalRepeatable#repeat()}. Else this method will call {@link ConditionalRepeatable#timeout()} and the {@link Plannable} will
+     * be cancelled through {@link #cancel()}.
+     */
     @Override
     public void run() {
         if(conditionalRepeatable.getCondition()){

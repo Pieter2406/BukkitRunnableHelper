@@ -3,7 +3,7 @@ package bukkitrunnablehelper.interfaces;
 /**
  * Created by Pieter on 25/06/2015.
  */
-public interface Repeatable extends Runnable {
+public interface Repeatable extends Plannable {
     /**
      * Returns the amount of ticks before {@link Repeatable#repeat()} method of this Repeatable is called.
      * @return An integer with the amount of ticks between every repetition.
