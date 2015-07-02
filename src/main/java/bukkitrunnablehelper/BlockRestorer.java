@@ -1,5 +1,6 @@
 package bukkitrunnablehelper;
 
+import bukkitrunnablehelper.interfaces.BlockManipulator;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 
