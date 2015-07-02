@@ -28,13 +28,13 @@ public abstract class RunnableHandler extends BukkitRunnable{
      * returned because the bukkit scheduler handles this by its own.
      * @param runnable The TimeOutable for which the time out functionality is handled.
      */
-    public static void handleTimeOut(TimeOutable runnable){
+    public static void handleTimeOut(Runnable runnable){
         if(runnable instanceof ConditionalRepeatable){
             handlers.add(new ConditionalRepeatHandler((ConditionalRepeatable) runnable));
         }else if(runnable instanceof TimedRepeatable){
             handlers.add(new TimedRepeatHandler((TimedRepeatable) runnable));
         }else{
-            handlers.add(new TimeOutHandler(runnable));
+            handlers.add(new TimeOutHandler((TimeOutable) runnable));
         }
     }
 
