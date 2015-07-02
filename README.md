@@ -15,3 +15,6 @@ The required steps to get this to work are:
   That's it!
   
   More information can be found on my [page](pieter2406.github.io)
+
+  Maven importing functionality through JitPack:
+  ![JitPack](https://img.shields.io/github/tag/Pieter2406/BukkitRunnableHelper.svg?label=JitPack)[](https://jitpack.io/#Pieter2406/BukkitRunnableHelper/5508bbef8a)
