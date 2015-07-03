@@ -11,7 +11,7 @@ import java.util.List;
  * A TimeOutableHandler class extends {@link BukkitRunnable} and handles all classes which are {@link TimeOutable}. It is a void
  * factory for a {@link PlannableHandler}, a {@link TimedRepeatableHandler} and a {@link ConditionalRepeatHandler}. The Bukkit {@link JavaPlugin} needs to be
  * set through the {@link TimeOutableHandler#setPlugin(JavaPlugin)} method before using it in a plugin. After that, classes can be added through the
- * {@link TimeOutableHandler#handlePlannable(TimeOutable)} method.
+ * {@link TimeOutableHandler#handleTimeOut(TimeOutable)} method.
  */
 public abstract class TimeOutableHandler extends BukkitRunnable {
     protected static final List<TimeOutableHandler> handlers = new ArrayList<TimeOutableHandler>();
@@ -32,7 +32,7 @@ public abstract class TimeOutableHandler extends BukkitRunnable {
      *
      * @param timeOutable The TimeOutable for which the time out functionality is handled.
      */
-    public static void handlePlannable(TimeOutable timeOutable) {
+    public static void handleTimeOut(TimeOutable timeOutable) {
         if (timeOutable instanceof Repeatable) {
             if (timeOutable instanceof ConditionalRepeatable) {
                 handlers.add(new ConditionalRepeatHandler((ConditionalRepeatable) timeOutable));

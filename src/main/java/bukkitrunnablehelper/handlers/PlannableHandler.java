@@ -6,7 +6,7 @@ import bukkitrunnablehelper.interfaces.TimeOutable;
 /**
  * A PlannableHandler is a BukkitRunnable which schedules a Plannable to be timed out after the specified amount of ticks.
  * Instantiating this class is enough to schedule a timeout of a Plannable. Instantiating this class can only be done by
- * the method {@link TimeOutableHandler#handlePlannable(TimeOutable)}.
+ * the method {@link TimeOutableHandler#handleTimeOut(TimeOutable)}.
  */
 public class PlannableHandler extends TimeOutableHandler {
     private Plannable plannable;
