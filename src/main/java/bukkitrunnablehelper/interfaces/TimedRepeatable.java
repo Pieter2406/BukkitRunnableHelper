@@ -5,7 +5,7 @@ package bukkitrunnablehelper.interfaces;
  */
 public interface TimedRepeatable extends Repeatable {
     /**
-     * Returns the remaining amount of ticks before {@link Plannable#timeout()} method of this Repeatable is called.
+     * Returns the remaining amount of ticks before {@link TimeOutable#timeout()} method of this Repeatable is called.
      * @return An integer with the remaining amount of ticks.
      */
     int getRemainingTicks();

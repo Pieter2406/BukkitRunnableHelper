@@ -1,6 +1,6 @@
 package bukkitrunnablehelper.handlers;
 
-import bukkitrunnablehelper.interfaces.Plannable;
+import bukkitrunnablehelper.interfaces.TimeOutable;
 import bukkitrunnablehelper.interfaces.TimedRepeatable;
 
 /**
@@ -18,7 +18,7 @@ public class TimedRepeatableHandler extends RepeatableHandler {
 
     /**
      * This method is called every "{@link TimedRepeatable#getDelayTicks()}" ticks. If {@link TimedRepeatable#getRemainingTicks()} is smaller or equal
-     * to zero this method will call {@link TimedRepeatable#repeat()}. Else this method will call {@link TimedRepeatable#timeout()} and the {@link Plannable} will
+     * to zero this method will call {@link TimedRepeatable#repeat()}. Else this method will call {@link TimedRepeatable#timeout()} and the {@link TimeOutable} will
      * be cancelled through {@link #cancel()}.
      */
     @Override

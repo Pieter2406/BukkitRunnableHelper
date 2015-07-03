@@ -1,7 +1,7 @@
 package bukkitrunnablehelper.handlers;
 
 import bukkitrunnablehelper.interfaces.ConditionalRepeatable;
-import bukkitrunnablehelper.interfaces.Plannable;
+import bukkitrunnablehelper.interfaces.TimeOutable;
 
 /**
  * A ConditionalRepeatHandler extends a {@link RepeatableHandler} and handles the scheduling of a {@link ConditionalRepeatable} class.
@@ -18,7 +18,7 @@ public class ConditionalRepeatHandler extends RepeatableHandler {
 
     /**
      * This method is called every "{@link ConditionalRepeatable#getDelayTicks()}" ticks. If {@link ConditionalRepeatable#getCondition()} is true
-     * this method will call {@link ConditionalRepeatable#repeat()}. Else this method will call {@link ConditionalRepeatable#timeout()} and the {@link Plannable} will
+     * this method will call {@link ConditionalRepeatable#repeat()}. Else this method will call {@link ConditionalRepeatable#timeout()} and the {@link TimeOutable} will
      * be cancelled through {@link #cancel()}.
      */
     @Override

@@ -1,11 +1,13 @@
 package bukkitrunnablehelper.interfaces;
 
 /**
- * Created by Pieter on 2/07/2015.
+ * If a class implements this interface, it is a Plannable. Meaning that it can be timed out after a specified amount
+ * of ticks. A Plannable has a timeout method which specifies what will happen when it is timed out, and a getTimeOutTicks
+ * method wchich specifies after how many ticks this Plannable will be timed out.
  */
-public interface Plannable {
+public interface Plannable extends TimeOutable {
     /**
-     * The method that will be called when this Plannable is timeouted.
+     * Gets the total amount of ticks that this Plannable will last.
      */
-    void timeout();
+    int getTimeOutTicks();
 }
